@@ -1,0 +1,16 @@
+{
+    "name": "routelogger/routelogger",
+    "autoload": {
+        "psr-4": {
+            "Routelogger\\Routelogger\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Priyank Mehta",
+            "email": "priyank.21097@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
