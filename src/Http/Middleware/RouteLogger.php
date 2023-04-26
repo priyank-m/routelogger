@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
+// code here
 class RouteLogger
 {
     public function handle(Request $request, Closure $next)
