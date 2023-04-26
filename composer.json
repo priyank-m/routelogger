@@ -1,6 +1,7 @@
 {
     "name": "routelogger/routelogger",
     "description": "This package use for logged route name",
+    "license": "MIT License",
     "autoload": {
         "psr-4": {
             "Routelogger\\Routelogger\\": "src/"
