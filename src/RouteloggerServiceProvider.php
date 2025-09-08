@@ -21,7 +21,7 @@ class RouteloggerServiceProvider extends ServiceProvider
 
         // Publish config (optional)
         $this->publishes([
-            __DIR__.'/../config/routelogger.php' => config_path('routelogger.php'),
+            __DIR__.'/config/routelogger.php' => config_path('routelogger.php'),
         ], 'config');
     }
 
