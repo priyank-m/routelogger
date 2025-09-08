@@ -1,4 +1,4 @@
-composer require voip-logger/logger
+composer require routelogger/routelogger
 
 then in App\Http Directory open Kernel.php file
 
