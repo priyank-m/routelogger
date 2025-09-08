@@ -8,21 +8,23 @@ use Routelogger\Routelogger\Http\Middleware\RouteLogger;
 
 class RouteloggerServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap services.
-     */
     public function boot(Router $router)
     {
-        // Register middleware alias (optional, but nice to have)
+        // Register middleware alias
         $router->aliasMiddleware('routelogger', RouteLogger::class);
 
-        // ✅ Automatically attach to API group
-        $router->pushMiddlewareToGroup('api', RouteLogger::class);
+        // Apply middleware to configured groups
+        $groups = config('routelogger.groups', ['api']);
+        foreach ($groups as $group) {
+            $router->pushMiddlewareToGroup($group, RouteLogger::class);
+        }
+
+        // Publish config (optional)
+        $this->publishes([
+            __DIR__.'/../config/routelogger.php' => config_path('routelogger.php'),
+        ], 'config');
     }
 
-    /**
-     * Register services.
-     */
     public function register()
     {
         //
